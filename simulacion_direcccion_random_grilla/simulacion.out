@@ -1,0 +1,20 @@
+*-* Running: simulacion
+Dir: /home/mvidal7s/Doctorado/semestre_II/FLUKA_FUENTES/fuentes_FLUKA/histogram/simulacion_direcccion_random_grilla
+Cmd: /usr/bin/nohup /usr/local/fluka/bin/rfluka -e /home/mvidal7s/Doctorado/semestre_II/FLUKA_FUENTES/fuentes_FLUKA/histogram/simulacion_direcccion_random_grilla/grilla -M 1 simulacion.inp
+
+                                   F L U K A
+
+Dir:   /usr/local/fluka
+Data:  /usr/local/fluka/data
+Exec:  /home/mvidal7s/Doctorado/semestre_II/FLUKA_FUENTES/fuentes_FLUKA/histogram/simulacion_direcccion_random_grilla/grilla
+Input: /home/mvidal7s/Doctorado/semestre_II/FLUKA_FUENTES/fuentes_FLUKA/histogram/simulacion_direcccion_random_grilla/simulacion.inp
+Initial seed copied from /usr/local/fluka/data
+Running fluka in /home/mvidal7s/Doctorado/semestre_II/FLUKA_FUENTES/fuentes_FLUKA/histogram/simulacion_direcccion_random_grilla/fluka_226607
+
+======================== Running FLUKA for cycle # 1 ========================
+Removing links
+Removing temporary files
+Saving output and random number seed
+Saving additional files generated
+     Moving "fort.22" to "/home/mvidal7s/Doctorado/semestre_II/FLUKA_FUENTES/fuentes_FLUKA/histogram/simulacion_direcccion_random_grilla/simulacion001_fort.22"
+End of FLUKA run
