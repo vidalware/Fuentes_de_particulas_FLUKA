@@ -1,0 +1,102 @@
+# flair project file
+Version: 300
+Mode: fluka
+md5: 1213e1ea70656b5cdad73b2610164cad
+Input:
+TITLE
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+SOURCE
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 100000.0
+*Void sphere
+SPH void 0.0 0.0 0.0 10000.0
+*Cylindrical target
+RCC target 0.0 0.0 0.0 0.0 0.0 80.0 15.0
+END
+*Black hole
+REGION BLKBODY 5
+	+blkbody -void
+*Void around
+REGION VOID 5
+	+void -target
+*Target
+REGION TARGET 5
+	+target
+END
+GEOEND
+*..+....1....+....2....+....3....+....4....+....5....+....6....+....7..
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID
+ASSIGNMA , TUNGSTEN TARGET
+USRBIN a 10 NEUTRON -22 100 100 100 -100 -100 -100 120 120 120
+*Set the random number seed
+RANDOMIZ , 1.0
+*Set the number of primary histories to be simulated in the run
+START , 10
+STOP
+EndInput
+
+Page: Input
+plotengine: Gnuplot
+Compile: fuente_externa_eje_random
+	source: ['fuente_eje_random.f']
+End
+
+# Run information
+Run: <default>
+	Exe:      fuente_externa_eje_random
+	Last:     1
+	Status:   3
+	StartRun: 1731532381.7489243
+	open:     1
+End
+
+# Plots information
+Plot: Red
+	Type: Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	coord: Z-X
+	extends: 100.0 75.0
+	group: Geometry
+	layer: Media
+End
+Plot: Green
+	Type: Geometry
+	basisu: 0.836516 0.0173377 0.547668
+	basisv: 0.224144 0.901221 -0.370891
+	extends: 100.0 75.0
+	group: Geometry
+	layer: 3D
+End
+Plot: Blue
+	Type: Geometry
+	basisu: 0 0 1
+	coord: Z-Y
+	extends: 100.0 75.0
+	group: Geometry
+	layer: Media
+End
+Plot: Magenta
+	Type: Geometry
+	coord: X-Y
+	extends: 100.0 75.0
+	group: Geometry
+	layer: Media
+End
+Plot: example_22_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: example_22.bnn
+	grid: 0
+	hist: 2D Projection
+	int: 1502.9195192806369
+	max: 1.23789795E-02
+	min: 2.22519179E-06
+	open: 1
+	proj: Y
+	title: USRBIN example 22
+End

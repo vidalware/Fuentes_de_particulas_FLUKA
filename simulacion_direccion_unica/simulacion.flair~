@@ -1,0 +1,74 @@
+# flair project file
+Version: 300
+Mode: fluka
+md5: 1213e1ea70656b5cdad73b2610164cad
+Input:
+TITLE
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+SOURCE
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 100000.0
+*Void sphere
+SPH void 0.0 0.0 0.0 10000.0
+*Cylindrical target
+RCC target 0.0 0.0 0.0 0.0 0.0 80.0 15.0
+END
+*Black hole
+REGION BLKBODY 5
+	+blkbody -void
+*Void around
+REGION VOID 5
+	+void -target
+*Target
+REGION TARGET 5
+	+target
+END
+GEOEND
+*..+....1....+....2....+....3....+....4....+....5....+....6....+....7..
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID
+ASSIGNMA , TUNGSTEN TARGET
+USRBIN a 10 NEUTRON -22 100 100 100 -100 -100 -100 120 120 120
+*Set the random number seed
+RANDOMIZ , 1.0
+*Set the number of primary histories to be simulated in the run
+START , 10
+STOP
+EndInput
+
+Page: Plot
+plotengine: Gnuplot
+Compile: fuente
+	source: ['fuente_direccion_unica.f']
+End
+
+# Run information
+Run: <default>
+	Exe:      fuente
+	Last:     1
+	Status:   3
+	StartRun: 1736816700.4662757
+	open:     1
+End
+
+# Plots information
+Plot: simulacion_geometry
+	Type: Geometry
+	grid: 0
+	title: Geometry 
+End
+Plot: simulacion_22_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: simulacion_22.bnn
+	grid: 0
+	hist: 2D Projection
+	int: 870.04052801484454
+	max: 1.35910958E-02
+	min: 5.37496533E-07
+	proj: Y
+	title: USRBIN simulacion 22
+End

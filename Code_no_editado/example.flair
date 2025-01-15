@@ -1,0 +1,103 @@
+# flair project file
+Version: 300
+Mode: fluka
+md5: 081cf0ad9a53c27a35f06627494557b7
+Input:
+TITLE
+*Set the defaults for precision simulations
+DEFAULTS PRECISIO
+*Define the beam characteristics
+BEAM NEUTRON -1.0
+*Define the beam position
+BEAMPOS ,,, -1 0 0.5
+GEOBEGIN COMBNAME
+*Black body
+SPH blkbody 0.0 0.0 0.0 100000.0
+*Void sphere
+SPH void 0.0 0.0 0.0 10000.0
+*Cylindrical target
+RCC target 0.0 0.0 0.0 0.0 0.0 80.0 15.0
+END
+*Black hole
+REGION BLKBODY 5
+	+blkbody -void
+*Void around
+REGION VOID 5
+	+void -target
+*Target
+REGION TARGET 5
+	+target
+END
+GEOEND
+*..+....1....+....2....+....3....+....4....+....5....+....6....+....7..
+ASSIGNMA , BLCKHOLE BLKBODY
+ASSIGNMA , VACUUM VOID
+ASSIGNMA , TUNGSTEN TARGET
+USRBIN a 10 NEUTRON -21 100 100 100 -100 -100 -100 120 120 120
+*Set the random number seed
+RANDOMIZ , 1.0
+*Set the number of primary histories to be simulated in the run
+START , 10
+STOP
+EndInput
+
+Page: Plot
+plotengine: Gnuplot
+
+# Run information
+Run: <default>
+	Last:     1
+	Status:   3
+	StartRun: 1736957041.8511252
+	open:     1
+End
+
+# Plots information
+Plot: Red
+	Type: Geometry
+	coord: X-Y
+	extends: 48.225308641975296 22.804215714422426
+	group: Geometry
+	layer: Media
+	origin: 4 0 38
+End
+Plot: Green
+	Type: Geometry
+	coord: X-Y
+	extends: 48.22530864197532 22.833716640314314
+	group: Geometry
+	layer: 3D
+	origin: -8 0 38
+End
+Plot: Blue
+	Type: Geometry
+	basisu: 0 0 1
+	basisv: 1 0 0
+	coord: Z-X
+	extends: 100.0 47.15762273901809
+	group: Geometry
+	layer: Media
+	origin: -1.55039 0 45.9948
+End
+Plot: Magenta
+	Type: Geometry
+	basisu: 0 0 1
+	coord: Z-Y
+	extends: 100.0 47.21862871927554
+	group: Geometry
+	layer: 3D
+	origin: 0 0 33.5917
+End
+Plot: example_21_plot
+	Type: USRBIN
+	cblog: 1
+	cbtics: 1
+	datafile: example_21.bnn
+	grid: 0
+	hist: 2D Projection
+	int: 4471.0787968659442
+	max: 3.51578668E-02
+	min: 2.25521191E-07
+	proj: Y
+	title: USRBIN example 21
+End

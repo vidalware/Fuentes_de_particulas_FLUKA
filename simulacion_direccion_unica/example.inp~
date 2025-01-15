@@ -1,0 +1,33 @@
+TITLE
+
+*Set the defaults for precision simulations
+DEFAULTS                                                              PRECISIO
+SOURCE
+GEOBEGIN                                                              COMBNAME
+    0    0          
+*Black body
+SPH blkbody    0.0 0.0 0.0 100000.0
+*Void sphere
+SPH void       0.0 0.0 0.0 10000.0
+*Cylindrical target
+RCC target     0.0 0.0 0.0 0.0 0.0 80.0 15.0
+END
+*Black hole
+BLKBODY      5 +blkbody -void
+*Void around
+VOID         5 +void -target
+*Target
+TARGET       5 +target
+END
+GEOEND
+*..+....1....+....2....+....3....+....4....+....5....+....6....+....7..
+ASSIGNMA    BLCKHOLE   BLKBODY
+ASSIGNMA      VACUUM      VOID
+ASSIGNMA    TUNGSTEN    TARGET
+USRBIN            10   NEUTRON       -22       100       100       100a
+USRBIN          -100      -100      -100       120       120       120 &
+*Set the random number seed
+RANDOMIZ         1.0
+*Set the number of primary histories to be simulated in the run
+START             10
+STOP
