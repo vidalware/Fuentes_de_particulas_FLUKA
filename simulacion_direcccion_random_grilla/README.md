@@ -94,7 +94,7 @@ La fuente está definida en una subrutina **SOURCE** escrita en FORTRAN. Sus pri
 Los resultados de la simulación incluyen visualizaciones del flujo de neutrones en el detector:
 
 1. **Proyección en el Eje \( y \):**
-   ![Fluencia Proyección Eje Y](fluencia_proyeccion_eje_y.png)
+   ![Fluencia Proyección Eje Y](fluencia_proyeccion_eje_Y.png)
 
 2. **Proyección en el Eje \( z \):**
    ![Fluencia Proyección Eje Z](fluencia_proyeccion_eje_Z.png)
