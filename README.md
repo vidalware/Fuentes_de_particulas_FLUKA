@@ -51,21 +51,20 @@ Este proyecto busca demostrar cómo integrar datos experimentales o gráficos pr
 - `simulacion.inp`: Archivo de entrada de simulación preparado.
 - `No_Shielding.csv`: Archivo procesado listo para FLUKA.
 - `fuente_direccion_unica.f`: Subrutina que define una fuente externa con dirección fija.
-- **Otros archivos**: Archivos generados durante la simulación.
+
 
 ### **Carpeta: simulacion_direccion_random**
 - `simulacion.flair`: Simulación lista para ejecutar con una fuente externa.
 - `simulacion.inp`: Archivo de entrada de simulación preparado.
 - `fuente_direccion_random.f`: Subrutina que define una fuente externa con dirección aleatoria.
 - `No_Shielding.csv`: Archivo procesado listo para FLUKA.
-- **Otros archivos**: Archivos generados durante la simulación.
+
 
 ### **Carpeta: simulacion_direccion_random_grilla** (NUEVA)
 - `simulacion.flair`: Simulación configurada para fuentes aleatorias en una grilla de posiciones.
 - `simulacion.inp`: Archivo de entrada de simulación preparado.
 - `fuente_direccion_random_grilla.f`: Subrutina que genera partículas con posiciones aleatorias del haz de particula basadas en una grilla y en una direccion aleatoria.
 - `No_Shielding.csv`: Archivo procesado listo para FLUKA.
-- **Otros archivos**: Archivos generados durante la simulación.
 
 ---
 
