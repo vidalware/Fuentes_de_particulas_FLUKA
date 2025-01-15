@@ -1,4 +1,4 @@
-# **Fuentes de Partículas con el Software FLUKA**
+# **Fuentes de Partículas con el Software FLUKA** 💻
 
 Este proyecto se centra en la creación de **fuentes de partículas personalizadas** para simulaciones en FLUKA, basadas en datos digitalizados de curvas gráficas. La finalidad es demostrar cómo integrar datos experimentales en FLUKA para realizar simulaciones realistas y útiles en diversas aplicaciones como diseño de detectores y análisis de blindajes.
 
