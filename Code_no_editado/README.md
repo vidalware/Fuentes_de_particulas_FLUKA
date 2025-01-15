@@ -81,10 +81,10 @@ Analizar cómo interactúan los neutrones con un blanco de tungsteno, evaluando 
 La fluencia de neutrones fue evaluada mediante proyecciones en los ejes \( y \) y \( z \):
 
 1. **Proyección en el Eje \( y \):**
-   ![Fluencia Proyección Eje Y](fluencia_proyeccion_eje_y.png)
+   ![Fluencia Proyección Eje Y](fluencia_proyeccion_eje_Y.png)
 
 2. **Proyección en el Eje \( z \):**
-   ![Fluencia Proyección Eje Z](fluencia_proyeccion_eje_z.png)
+   ![Fluencia Proyección Eje Z](fluencia_proyeccion_eje_Z.png)
 
 ---
 
